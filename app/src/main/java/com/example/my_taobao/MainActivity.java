@@ -1,8 +1,11 @@
 package com.example.my_taobao;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -23,9 +26,15 @@ import com.example.my_taobao.module.fragment.ShopFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class MainActivity extends SimpleActivity implements  NavigationBarView.OnItemSelectedListener {
 
+    private static final long TIME = 2000;
     private final String TAG = "MainActivity";
+
+    private boolean isExit = false;
 
     private HomeFragment homeFragment;
     private MessageFragment messageFragment;
@@ -38,16 +47,11 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
     private FragmentTransaction mTransaction;
 
 
-//    ActivityMainBinding activityMainBinding;
-
     private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
-//        setContentView(activityMainBinding.getRoot());
-//        initView(savedInstanceState);
     }
 
     @Override
@@ -62,7 +66,6 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
         Log.d(TAG, "initView");
         initTab();
         initFragment();
-
     }
 
 
@@ -79,7 +82,6 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
         transaction.add(R.id.mainContainer, homeFragment)
                 .commit();
 
-        bottomNavigationView = findViewById(R.id.bottomView);
         bottomNavigationView.setOnItemSelectedListener(this);
     }
 
@@ -87,16 +89,7 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
     //初始化底部栏
     private void initTab() {
         Log.d(TAG, "initTab");
-
-//        if (activityMainBinding != null) {
-//            if (activityMainBinding.bottomView == null) {
-//                Log.e(TAG, "bottomNavigationView is null");
-//            } else {
-//                activityMainBinding.bottomView.setOnItemSelectedListener(this);
-//                Log.d(TAG, "bottomNavigationView initialized");
-//            }
-//        }
-
+        bottomNavigationView = findViewById(R.id.bottomView);
     }
 
 
@@ -142,5 +135,30 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exitByTwoClick();      //调用双击退出函数
+        }
+        return false;
+    }
+
+    private void exitByTwoClick() {
+        if (!isExit) {
+            isExit = true;
+            Toast.makeText(this, "再按一次返回键退出淘宝", Toast.LENGTH_SHORT).show();
+            Timer tExit = new Timer();
+            tExit.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    isExit = false;
+                }
+            }, TIME);
+        } else {
+            System.exit(0);
+        }
     }
 }

@@ -18,10 +18,6 @@ public abstract class SimpleActivity extends AppCompatActivity {
         initListener();
     }
 
-    public SimpleActivity() {
-
-    }
-
     protected abstract int getLayoutId();
 
     protected abstract void initView(Bundle savedInstanceState);
