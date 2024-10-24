@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item> <!-- 设置标题颜色 -->
+        <item name="android:textSize">20sp</item> <!-- 设置标题字体大小 -->
+        <item name="android:fontFamily">sans-serif-medium</item> <!-- 设置字体 -->
+        <item name="android:lineSpacingExtra">2dp</item> <!-- 设置行间距 -->
+    </style>
+</resources>

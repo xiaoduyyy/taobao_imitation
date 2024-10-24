@@ -11,12 +11,28 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
+
+    public P mPresenter;
 
     protected View mView;
-    protected Activity activity;
+    protected Activity mActivity;
     protected Context mContext;
 
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mPresenter = getPresenterInstance();
+        mPresenter.bindView(this);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        mActivity = (Activity) context;
+        mContext = context;
+        super.onAttach(context);
+    }
 
     @Nullable
     @Override
@@ -25,7 +41,25 @@ public abstract class BaseFragment extends Fragment {
         return mView;
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initView();
+        initListener();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mPresenter.unBindView();
+    }
+
+    protected abstract void initListener();
+
+    protected abstract void initView();
+
     protected abstract int getLayoutId();
 
+    public abstract P getPresenterInstance();
 
 }

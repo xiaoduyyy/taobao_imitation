@@ -1,6 +1,5 @@
 package com.example.my_taobao;
 
-import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -10,7 +9,6 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -19,7 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.my_taobao.Base.SimpleActivity;
-import com.example.my_taobao.module.fragment.HomeFragment;
+import com.example.my_taobao.home.HomeFragment;
 import com.example.my_taobao.module.fragment.MessageFragment;
 import com.example.my_taobao.module.fragment.MineFragment;
 import com.example.my_taobao.module.fragment.ShopFragment;
@@ -52,6 +50,13 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        EdgeToEdge.enable(this);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.mainContainer), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
     }
 
     @Override
@@ -76,7 +81,7 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
         shopFragment = new ShopFragment();
         mineFragment = new MineFragment();
 
-        fragments = new Fragment[]{homeFragment, messageFragment, shopFragment, mineFragment};
+        fragments = new Fragment[]{homeFragment, homeFragment, homeFragment, homeFragment};
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.add(R.id.mainContainer, homeFragment)

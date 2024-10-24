@@ -1,10 +1,11 @@
-package com.example.my_taobao.module.fragment;
+package com.example.my_taobao.home;
 
 import com.example.my_taobao.Base.BaseFragment;
-import com.example.my_taobao.Base.BasePresenter;
 import com.example.my_taobao.R;
 
-public class MineFragment extends BaseFragment {
+public class HomeFragment extends BaseFragment<HomePresenter> {
+
+
     @Override
     protected void initListener() {
 
@@ -17,11 +18,11 @@ public class MineFragment extends BaseFragment {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.mine_fragment;
+        return R.layout.home_fragment;
     }
 
     @Override
-    public BasePresenter getPresenterInstance() {
-        return null;
+    public HomePresenter getPresenterInstance() {
+        return new HomePresenter();
     }
 }
