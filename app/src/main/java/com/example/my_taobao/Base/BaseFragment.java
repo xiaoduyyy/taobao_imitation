@@ -42,11 +42,12 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        initView();
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        initView(view);
         initListener();
     }
+
 
     @Override
     public void onDestroy() {
@@ -56,7 +57,7 @@ public abstract class BaseFragment<P extends BasePresenter> extends Fragment {
 
     protected abstract void initListener();
 
-    protected abstract void initView();
+    protected abstract void initView(View view);
 
     protected abstract int getLayoutId();
 

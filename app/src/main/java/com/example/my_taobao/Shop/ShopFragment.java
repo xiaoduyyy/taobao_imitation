@@ -1,4 +1,6 @@
-package com.example.my_taobao.module.fragment;
+package com.example.my_taobao.Shop;
+
+import android.view.View;
 
 import com.example.my_taobao.Base.BaseFragment;
 import com.example.my_taobao.Base.BasePresenter;
@@ -11,9 +13,10 @@ public class ShopFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView() {
+    protected void initView(View view) {
 
     }
+
 
     @Override
     protected int getLayoutId() {

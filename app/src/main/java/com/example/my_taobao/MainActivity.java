@@ -17,10 +17,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.my_taobao.Base.SimpleActivity;
-import com.example.my_taobao.home.HomeFragment;
-import com.example.my_taobao.module.fragment.MessageFragment;
-import com.example.my_taobao.module.fragment.MineFragment;
-import com.example.my_taobao.module.fragment.ShopFragment;
+import com.example.my_taobao.Home.HomeFragment;
+import com.example.my_taobao.Message.MessageFragment;
+import com.example.my_taobao.Mine.MineFragment;
+import com.example.my_taobao.Shop.ShopFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 

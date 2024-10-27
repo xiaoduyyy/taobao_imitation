@@ -1,23 +1,26 @@
-package com.example.my_taobao.module.fragment;
+package com.example.my_taobao.Mine;
+
+import android.view.View;
 
 import com.example.my_taobao.Base.BaseFragment;
 import com.example.my_taobao.Base.BasePresenter;
 import com.example.my_taobao.R;
 
-public class MessageFragment extends BaseFragment {
+public class MineFragment extends BaseFragment {
     @Override
     protected void initListener() {
 
     }
 
     @Override
-    protected void initView() {
+    protected void initView(View view) {
 
     }
 
+
     @Override
     protected int getLayoutId() {
-        return R.layout.message_fragment;
+        return R.layout.mine_fragment;
     }
 
     @Override
