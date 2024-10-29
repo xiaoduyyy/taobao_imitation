@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -82,24 +82,24 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
-            <TableLayout
-                android:id="@+id/table_layout"
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="40dp"
+                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorHeight="1dp"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/white"
+                app:tabIndicatorFullWidth="false"
+                app:tabRippleColor="@android:color/transparent"/>
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/view_pager"
+                android:background="#f0f0f0"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="horizontal"/>
         </LinearLayout>
-
     </LinearLayout>
-
-
-
-
-
-
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

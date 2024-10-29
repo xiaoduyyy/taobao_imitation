@@ -19,4 +19,20 @@ public abstract class BasePresenter<M extends BaseModel, V extends BaseFragment>
     }
 
     public abstract M getModelInstance();
+
+    public V getmView() {
+        return mView;
+    }
+
+    public void setmView(V mView) {
+        this.mView = mView;
+    }
+
+    public M getmModel() {
+        return mModel;
+    }
+
+    public void setmModel(M mModel) {
+        this.mModel = mModel;
+    }
 }

@@ -17,7 +17,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.my_taobao.Base.SimpleActivity;
-import com.example.my_taobao.Home.HomeFragment;
+import com.example.my_taobao.Home.mvp.HomeFragment;
 import com.example.my_taobao.Message.MessageFragment;
 import com.example.my_taobao.Mine.MineFragment;
 import com.example.my_taobao.Shop.ShopFragment;
