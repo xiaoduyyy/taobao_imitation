@@ -81,7 +81,7 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
         shopFragment = new ShopFragment();
         mineFragment = new MineFragment();
 
-        fragments = new Fragment[]{homeFragment, homeFragment, homeFragment, homeFragment};
+        fragments = new Fragment[]{homeFragment, messageFragment, shopFragment, mineFragment};
 
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
         transaction.add(R.id.mainContainer, homeFragment)

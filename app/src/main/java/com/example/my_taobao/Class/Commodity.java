@@ -9,12 +9,45 @@ public class Commodity {
 
     private String commodityText;
 
+    private String commodityDecrase;
+
+    private String commodityPrice;
+
+    private String commoditySell;
+
+    public String getCommodityDecrase() {
+        return commodityDecrase;
+    }
+
+    public void setCommodityDecrase(String commodityDecrase) {
+        this.commodityDecrase = commodityDecrase;
+    }
+
+    public String getCommodityPrice() {
+        return commodityPrice;
+    }
+
+    public void setCommodityPrice(String commodityPrice) {
+        this.commodityPrice = commodityPrice;
+    }
+
+    public String getCommoditySell() {
+        return commoditySell;
+    }
+
+    public void setCommoditySell(String commoditySell) {
+        this.commoditySell = commoditySell;
+    }
+
     public Commodity() {
     }
 
-    public Commodity(int commodityImage, String commodityText) {
+    public Commodity(int commodityImage, String commodityText, String commodityDecrase, String commodityPrice, String commoditySell) {
         this.commodityImage = commodityImage;
         this.commodityText = commodityText;
+        this.commodityDecrase = commodityDecrase;
+        this.commodityPrice = commodityPrice;
+        this.commoditySell = commoditySell;
     }
 
     public int getCommodityImage() {

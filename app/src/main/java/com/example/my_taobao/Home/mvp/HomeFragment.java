@@ -34,6 +34,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
             swipeRefreshLayout.setRefreshing(true);
             handler.postDelayed(() -> swipeRefreshLayout.setRefreshing(false), 1000);
         });
+        viewPager.setOnTouchListener((v, event) -> true); // 禁用滑动
     }
 
     @Override

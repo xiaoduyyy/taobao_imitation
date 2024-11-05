@@ -36,6 +36,9 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
         Commodity commodity = commodities.get(position);
         holder.imageView.setImageResource(commodity.getCommodityImage());
         holder.textView.setText(commodity.getCommodityText());
+        holder.priceDecrase.setText(commodity.getCommodityDecrase());
+        holder.price.setText(commodity.getCommodityPrice());
+        holder.sellNumber.setText(commodity.getCommoditySell());
     }
 
     @Override
@@ -47,11 +50,17 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         private ImageView imageView;
         private TextView textView;
+        private TextView price;
+        private TextView priceDecrase;
+        private TextView sellNumber;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.commodity_image);
             textView = itemView.findViewById(R.id.commodity_text);
+            price = itemView.findViewById(R.id.commodity_price);
+            priceDecrase = itemView.findViewById(R.id.commodity_text_from);
+            sellNumber = itemView.findViewById(R.id.commodity_sellnumber);
         }
     }
 }

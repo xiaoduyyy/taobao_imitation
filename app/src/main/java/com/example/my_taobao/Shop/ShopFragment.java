@@ -6,7 +6,8 @@ import com.example.my_taobao.Base.BaseFragment;
 import com.example.my_taobao.Base.BasePresenter;
 import com.example.my_taobao.R;
 
-public class ShopFragment extends BaseFragment {
+public class ShopFragment extends BaseFragment<ShopPresenter> {
+
     @Override
     protected void initListener() {
 
@@ -17,14 +18,13 @@ public class ShopFragment extends BaseFragment {
 
     }
 
-
     @Override
     protected int getLayoutId() {
         return R.layout.shop_fragment;
     }
 
     @Override
-    public BasePresenter getPresenterInstance() {
-        return null;
+    public ShopPresenter getPresenterInstance() {
+        return new ShopPresenter();
     }
 }
