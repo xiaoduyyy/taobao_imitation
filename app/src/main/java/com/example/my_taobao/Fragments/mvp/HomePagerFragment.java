@@ -1,5 +1,6 @@
 package com.example.my_taobao.Fragments.mvp;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -16,8 +17,10 @@ import com.example.my_taobao.Base.BaseFragment;
 import com.example.my_taobao.Class.Commodity;
 import com.example.my_taobao.Custom.MyRecyclerView;
 import com.example.my_taobao.Fragments.HomePagerView;
+import com.example.my_taobao.Fragments.ProductDetailsActivity;
 import com.example.my_taobao.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator2;
@@ -28,7 +31,7 @@ public class HomePagerFragment extends BaseFragment<HomePagerPresenter> implemen
     private MyRecyclerView recyclerView;
     private ViewPager2 viewPager;
     private CircleIndicator3 indicator;
-
+    private MyRecyclerViewAdapter recyclerViewAdapter;
     @Override
     protected void initListener() {
 
@@ -58,10 +61,20 @@ public class HomePagerFragment extends BaseFragment<HomePagerPresenter> implemen
     public void setupRecyclerView(List<Commodity> commodities) {
         int columnCount = 2;
         StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(columnCount, StaggeredGridLayoutManager.VERTICAL);
-
+        recyclerViewAdapter = new MyRecyclerViewAdapter(commodities);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(new MyRecyclerViewAdapter(commodities));
-
+        recyclerView.setAdapter(recyclerViewAdapter);
+        recyclerViewAdapter.setOnItemClickListener(new MyRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent intent = new Intent(getContext(), ProductDetailsActivity.class);
+                Commodity commodity = commodities.get(position);
+                intent.putIntegerArrayListExtra("images", (ArrayList<Integer>) commodity.getImages());
+                intent.putExtra("text", commodity.getCommodityText());
+                intent.putExtra("price", commodity.getCommodityPrice());
+                startActivity(intent);
+            }
+        });
     }
 
     public void setupViewPager(List<Fragment> fragments) {

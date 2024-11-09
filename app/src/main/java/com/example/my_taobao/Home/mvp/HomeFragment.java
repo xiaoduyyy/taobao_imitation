@@ -1,7 +1,9 @@
 package com.example.my_taobao.Home.mvp;
 
+import android.graphics.Typeface;
 import android.os.Handler;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,6 +37,26 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
             handler.postDelayed(() -> swipeRefreshLayout.setRefreshing(false), 1000);
         });
         viewPager.setOnTouchListener((v, event) -> true); // 禁用滑动
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                TextView tabTextView = (TextView) tab.getCustomView();
+                if (tabTextView != null) {
+                    tabTextView.setTextSize(18);
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     @Override

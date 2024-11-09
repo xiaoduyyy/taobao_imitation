@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="0dp"
             android:adjustViewBounds="true"
-            android:src="@drawable/commodity1"
+            android:src="@drawable/weiyi1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -99,20 +99,36 @@
             app:layout_constraintStart_toEndOf="@+id/commodity_text_from"
             app:layout_constraintTop_toBottomOf="@+id/commodity_tianmao"
             app:layout_constraintVertical_bias="0.25" />
+
         <TextView
-            android:id="@+id/commodity_price"
+            android:id="@+id/text3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="¥69.9"
+            android:text="¥"
             android:textColor="@color/orange"
-            android:textSize="20sp"
+            android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/commodity_shuang11"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.7" />
+
+        <TextView
+            android:id="@+id/commodity_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="69.9"
+            android:textColor="@color/orange"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.06"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commodity_shuang11"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/commodity_sellnumber"

@@ -1,7 +1,7 @@
 package com.example.my_taobao.Class;
 
-import android.widget.ImageView;
-import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Commodity {
 
@@ -14,6 +14,28 @@ public class Commodity {
     private String commodityPrice;
 
     private String commoditySell;
+
+    private List<Integer> images;
+
+    public Commodity() {
+    }
+
+    public Commodity(int commodityImage, String commodityText, String commodityDecrase, String commodityPrice, String commoditySell, List<Integer> images) {
+        this.commodityImage = commodityImage;
+        this.commodityText = commodityText;
+        this.commodityDecrase = commodityDecrase;
+        this.commodityPrice = commodityPrice;
+        this.commoditySell = commoditySell;
+        this.images = images;
+    }
+
+    public List<Integer> getImages() {
+        return images;
+    }
+
+    public void setImages(List<Integer> images) {
+        this.images = images;
+    }
 
     public String getCommodityDecrase() {
         return commodityDecrase;
@@ -39,17 +61,6 @@ public class Commodity {
         this.commoditySell = commoditySell;
     }
 
-    public Commodity() {
-    }
-
-    public Commodity(int commodityImage, String commodityText, String commodityDecrase, String commodityPrice, String commoditySell) {
-        this.commodityImage = commodityImage;
-        this.commodityText = commodityText;
-        this.commodityDecrase = commodityDecrase;
-        this.commodityPrice = commodityPrice;
-        this.commoditySell = commoditySell;
-    }
-
     public int getCommodityImage() {
         return commodityImage;
     }
@@ -64,5 +75,17 @@ public class Commodity {
 
     public void setCommodityText(String commodityText) {
         this.commodityText = commodityText;
+    }
+
+    @Override
+    public String toString() {
+        return "Commodity{" +
+                "commodityImage=" + commodityImage +
+                ", commodityText='" + commodityText + '\'' +
+                ", commodityDecrase='" + commodityDecrase + '\'' +
+                ", commodityPrice='" + commodityPrice + '\'' +
+                ", commoditySell='" + commoditySell + '\'' +
+                ", images=" + images +
+                '}';
     }
 }
