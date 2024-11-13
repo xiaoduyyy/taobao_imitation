@@ -6,13 +6,12 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.my_taobao.Adapters.MyRecyclerViewAdapter;
 import com.example.my_taobao.Adapters.PicturesFragmentAdapter;
+import com.example.my_taobao.Custom.MyViewPager;
+import com.example.my_taobao.Adapters.MyRecyclerViewAdapter;
 import com.example.my_taobao.Base.BaseFragment;
 import com.example.my_taobao.Class.Commodity;
 import com.example.my_taobao.Custom.MyRecyclerView;
@@ -23,15 +22,16 @@ import com.example.my_taobao.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import me.relex.circleindicator.CircleIndicator2;
 import me.relex.circleindicator.CircleIndicator3;
 
 public class HomePagerFragment extends BaseFragment<HomePagerPresenter> implements HomePagerView {
 
+    private final String TAG = "HomePagerFragment";
+
     private MyRecyclerView recyclerView;
     private ViewPager2 viewPager;
-    private CircleIndicator3 indicator;
     private MyRecyclerViewAdapter recyclerViewAdapter;
+    private CircleIndicator3 indicator;
     @Override
     protected void initListener() {
 
@@ -72,15 +72,17 @@ public class HomePagerFragment extends BaseFragment<HomePagerPresenter> implemen
                 intent.putIntegerArrayListExtra("images", (ArrayList<Integer>) commodity.getImages());
                 intent.putExtra("text", commodity.getCommodityText());
                 intent.putExtra("price", commodity.getCommodityPrice());
+                intent.putExtra("priceDecrase", commodity.getCommodityDecrase());
+                intent.putExtra("sell", commodity.getCommoditySell());
                 startActivity(intent);
             }
         });
     }
 
     public void setupViewPager(List<Fragment> fragments) {
-        PicturesFragmentAdapter adapter = new PicturesFragmentAdapter(getChildFragmentManager(), getLifecycle(), fragments);
+        Log.d(TAG, "setupViewPager: " + fragments.size());
+        PicturesFragmentAdapter adapter = new PicturesFragmentAdapter(this, fragments);
         viewPager.setAdapter(adapter);
         indicator.setViewPager(viewPager);
-        adapter.registerAdapterDataObserver(indicator.getAdapterDataObserver());
     }
 }

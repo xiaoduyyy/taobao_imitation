@@ -11,8 +11,10 @@ public class AccountAndPasswordDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE = "CREATE TABLE IF NOT EXISTS my_table (" +
             "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            "account TEXT, " +
-            "password TEXT)";
+            "text TEXT, " +
+            "price TEXT, " +
+            "quantity TEXT, " +
+            "picture Integer)";
 
     public AccountAndPasswordDatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);

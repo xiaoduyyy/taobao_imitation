@@ -43,7 +43,7 @@ public class HomePagerModel extends BaseModel<HomePagerPresenter> {
                 R.drawable.baohutao3,
                 R.drawable.baohutao4
         ))));
-        list.add(new Commodity(R.drawable.shubiao1, "蓝牙无线鼠标静音无声可充电游戏电竞男女生台式笔记本电脑通用", "官方8.5者", "39.98", "已售3万+", new ArrayList<>(Arrays.asList(
+        list.add(new Commodity(R.drawable.shubiao1, "蓝牙无线鼠标静音无声可充电游戏电竞男女生台式笔记本电脑通用", "官方8.5折", "39.98", "已售3万+", new ArrayList<>(Arrays.asList(
                 R.drawable.shubiao1,
                 R.drawable.shubiao2,
                 R.drawable.shubiao3,
@@ -72,7 +72,7 @@ public class HomePagerModel extends BaseModel<HomePagerPresenter> {
                 R.drawable.baohutao3,
                 R.drawable.baohutao4
         ))));
-        list.add(new Commodity(R.drawable.shubiao1, "蓝牙无线鼠标静音无声可充电游戏电竞男女生台式笔记本电脑通用", "官方8.5者", "39.98", "已售3万+", new ArrayList<>(Arrays.asList(
+        list.add(new Commodity(R.drawable.shubiao1, "蓝牙无线鼠标静音无声可充电游戏电竞男女生台式笔记本电脑通用", "官方8.5折", "39.98", "已售3万+", new ArrayList<>(Arrays.asList(
                 R.drawable.shubiao1,
                 R.drawable.shubiao2,
                 R.drawable.shubiao3,

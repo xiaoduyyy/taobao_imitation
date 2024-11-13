@@ -1,14 +1,14 @@
-package com.example.my_taobao;
+package com.example.my_taobao.Activitise;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.my_taobao.R;
 
 public class RegisterActivity extends AppCompatActivity {
 

@@ -95,12 +95,13 @@
                 app:tabTextColor="@color/white"
                 app:tabIndicatorFullWidth="false"
                 app:tabRippleColor="@android:color/transparent"/>
+
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
-                android:background="@color/white"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"/>
+                android:background="@color/white"
+                android:orientation="horizontal" />
         </LinearLayout>
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

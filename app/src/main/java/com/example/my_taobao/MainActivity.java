@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -45,6 +47,7 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
     private FragmentManager mFragmentManager;
     private FragmentTransaction mTransaction;
 
+    private ConstraintLayout constraintLayout;
 
     private BottomNavigationView bottomNavigationView;
 
@@ -67,6 +70,8 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
 
     @Override
     protected void initView(Bundle savedInstanceState) {
+
+        constraintLayout = findViewById(R.id.main_background);
         mFragmentManager = getSupportFragmentManager();
         mTransaction = mFragmentManager.beginTransaction();
         Log.d(TAG, "initView");
@@ -112,12 +117,16 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
 
         if (item.getItemId() == R.id.home_page) {
             switchFragment(fragments[0]);
+            constraintLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.taobao_red));
         } else if (item.getItemId() == R.id.message_page) {
             switchFragment(fragments[1]);
+            constraintLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.taobao_red));
         } else if (item.getItemId() == R.id.shoppingcart_page) {
             switchFragment(fragments[2]);
+            constraintLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.white));
         } else {
             switchFragment(fragments[3]);
+            constraintLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.taobao_red));
         }
 
         return true;

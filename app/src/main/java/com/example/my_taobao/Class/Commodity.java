@@ -11,11 +11,26 @@ public class Commodity {
 
     private String commodityDecrase;
 
+    private boolean isSelected;
+
     private String commodityPrice;
 
     private String commoditySell;
 
     private List<Integer> images;
+
+    private int quantity;
+
+    public Commodity(int commodityImage, String commodityText, String commodityDecrase, String commodityPrice, String commoditySell, List<Integer> images, int quantity) {
+        this.commodityImage = commodityImage;
+        this.commodityText = commodityText;
+        this.commodityDecrase = commodityDecrase;
+        this.commodityPrice = commodityPrice;
+        this.commoditySell = commoditySell;
+        this.images = images;
+        this.quantity = quantity;
+        this.isSelected = false;
+    }
 
     public Commodity() {
     }
@@ -27,6 +42,26 @@ public class Commodity {
         this.commodityPrice = commodityPrice;
         this.commoditySell = commoditySell;
         this.images = images;
+        this.quantity = 1;
+        this.isSelected = false;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
+    }
+
+
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public List<Integer> getImages() {
@@ -86,6 +121,7 @@ public class Commodity {
                 ", commodityPrice='" + commodityPrice + '\'' +
                 ", commoditySell='" + commoditySell + '\'' +
                 ", images=" + images +
+                ", quantity=" + quantity +
                 '}';
     }
 }

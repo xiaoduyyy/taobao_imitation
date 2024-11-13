@@ -6,14 +6,14 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/taobao_icon"
         android:label="我的淘宝"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activitise.CoverActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,8 +22,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Fragments.ProductDetailsActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".Activitise.RegisterActivity" />
         <activity android:name=".MainActivity"/>
+        <activity android:name=".Activitise.LoginActivity"/>
+        <receiver
+            android:name=".Shop.ShopFragment$CartUpdateReceiver"
+            android:exported="false" />
 
     </application>
 

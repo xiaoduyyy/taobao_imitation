@@ -13,22 +13,21 @@ import java.util.List;
 
 public class PicturesFragmentAdapter extends FragmentStateAdapter {
 
+    List<Fragment> fragmentList;
 
-    private List<Fragment> fragmentList;
-
-    public PicturesFragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, List<Fragment> fragmentList) {
-        super(fragmentManager, lifecycle);
+    public PicturesFragmentAdapter(@NonNull Fragment fragment, List<Fragment> fragmentList) {
+        super(fragment);
         this.fragmentList = fragmentList;
     }
 
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        return fragmentList == null ? null : fragmentList.get(position);
+        return fragmentList.get(position);
     }
 
     @Override
     public int getItemCount() {
-        return fragmentList == null ? 0:fragmentList.size();
+        return fragmentList == null ? 0 : fragmentList.size();
     }
 }

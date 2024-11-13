@@ -1,7 +1,9 @@
 package com.example.my_taobao.Home.mvp;
 
+import android.annotation.SuppressLint;
 import android.graphics.Typeface;
 import android.os.Handler;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -36,25 +38,42 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
             swipeRefreshLayout.setRefreshing(true);
             handler.postDelayed(() -> swipeRefreshLayout.setRefreshing(false), 1000);
         });
+        swipeRefreshLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                    if (event.getY() > 100) {
+                        swipeRefreshLayout.setEnabled(false);
+                    } else {
+                        swipeRefreshLayout.setEnabled(true);
+                    }
+                }
+                return false;
+            }
+        });
         viewPager.setOnTouchListener((v, event) -> true); // 禁用滑动
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 TextView tabTextView = (TextView) tab.getCustomView();
                 if (tabTextView != null) {
-                    tabTextView.setTextSize(18);
+                    tabTextView.setTextSize(30);
+                }
+            }
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                TextView tabTextView = (TextView) tab.getCustomView();
+                if (tabTextView != null) {
+                    tabTextView.setTextSize(16);
                 }
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
+                TextView tabTextView = (TextView) tab.getCustomView();
+                if (tabTextView != null) {
+                    tabTextView.setTextSize(30);
+                }
             }
         });
     }
@@ -83,6 +102,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeVie
     public void setupViewPager(List<Fragment> fragmentList, String[] titles) {
         fragmentAdapter = new FragmentAdapter(getChildFragmentManager(), getLifecycle(), titles, fragmentList);
         viewPager.setAdapter(fragmentAdapter);
+        viewPager.setOffscreenPageLimit(fragmentList.size());
         new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
             switch (position) {
                 case 0:

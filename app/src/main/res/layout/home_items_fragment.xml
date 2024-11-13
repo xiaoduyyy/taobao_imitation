@@ -17,21 +17,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/view_pager_recommend"
+
+            <com.example.my_taobao.Adapters.MyView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/orange" />
+                android:orientation="vertical">
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/view_pager_recommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+            </com.example.my_taobao.Adapters.MyView>
 
             <me.relex.circleindicator.CircleIndicator3
                 android:id="@+id/indicator"
                 android:layout_width="match_parent"
-                android:layout_margin="5dp"
                 android:layout_height="5dp"
                 android:background="@color/white"
                 app:ci_drawable="@color/orange"
                 app:ci_drawable_unselected="@color/grey"/>
-
             <com.example.my_taobao.Custom.MyRecyclerView
                 android:id="@+id/commodity_recyclerview"
                 android:layout_width="match_parent"
