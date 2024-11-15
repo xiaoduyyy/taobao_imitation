@@ -5,7 +5,7 @@ import android.util.Log;
 import androidx.fragment.app.Fragment;
 
 import com.example.my_taobao.base.BasePresenter;
-import com.example.my_taobao.Class.Commodity;
+import com.example.my_taobao.other.Commodity;
 
 import java.util.List;
 

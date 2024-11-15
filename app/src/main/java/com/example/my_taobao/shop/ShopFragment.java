@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.my_taobao.adapters.CartRecyclerViewAdapter;
 import com.example.my_taobao.base.BaseFragment;
-import com.example.my_taobao.Class.Commodity;
+import com.example.my_taobao.other.Commodity;
 import com.example.my_taobao.fragments.ProductDetailsActivity;
 import com.example.my_taobao.R;
 

@@ -1,7 +1,7 @@
 package com.example.my_taobao.mine;
 
 import com.example.my_taobao.base.BaseModel;
-import com.example.my_taobao.Class.Commodity;
+import com.example.my_taobao.other.Commodity;
 import com.example.my_taobao.R;
 
 import java.util.ArrayList;

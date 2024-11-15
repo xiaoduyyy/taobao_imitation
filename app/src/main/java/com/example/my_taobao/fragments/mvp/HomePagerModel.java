@@ -3,7 +3,7 @@ package com.example.my_taobao.fragments.mvp;
 import androidx.fragment.app.Fragment;
 
 import com.example.my_taobao.base.BaseModel;
-import com.example.my_taobao.Class.Commodity;
+import com.example.my_taobao.other.Commodity;
 import com.example.my_taobao.fragments.PictureFragment1;
 import com.example.my_taobao.fragments.PictureFragment2;
 import com.example.my_taobao.R;

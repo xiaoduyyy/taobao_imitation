@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.my_taobao.Class.ServerCard;
+import com.example.my_taobao.other.ServerCard;
 import com.example.my_taobao.R;
 
 import java.util.List;

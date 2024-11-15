@@ -1,8 +1,8 @@
 package com.example.my_taobao.message;
 
 import com.example.my_taobao.base.BaseModel;
-import com.example.my_taobao.Class.ServerCard;
-import com.example.my_taobao.Class.UserMessage;
+import com.example.my_taobao.other.ServerCard;
+import com.example.my_taobao.other.UserMessage;
 import com.example.my_taobao.R;
 
 import java.util.ArrayList;

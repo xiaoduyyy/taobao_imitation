@@ -1,6 +1,6 @@
 package com.example.my_taobao.fragments;
 
-import com.example.my_taobao.Class.Commodity;
+import com.example.my_taobao.other.Commodity;
 
 import java.util.List;
 

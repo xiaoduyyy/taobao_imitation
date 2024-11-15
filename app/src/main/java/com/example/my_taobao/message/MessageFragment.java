@@ -8,8 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.my_taobao.adapters.MessageRecentRecycelerViewAdapter;
 import com.example.my_taobao.adapters.MessageTopRecyclerViewAdapter;
 import com.example.my_taobao.base.BaseFragment;
-import com.example.my_taobao.Class.ServerCard;
-import com.example.my_taobao.Class.UserMessage;
+import com.example.my_taobao.other.ServerCard;
+import com.example.my_taobao.other.UserMessage;
 import com.example.my_taobao.R;
 
 import java.util.List;

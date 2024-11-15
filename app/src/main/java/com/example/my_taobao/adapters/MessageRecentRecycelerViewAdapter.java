@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.my_taobao.Class.UserMessage;
+import com.example.my_taobao.other.UserMessage;
 import com.example.my_taobao.R;
 
 import java.util.List;

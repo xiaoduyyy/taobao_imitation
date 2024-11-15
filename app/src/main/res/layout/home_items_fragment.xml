@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.example.my_taobao.adapters.MyView
+            <com.example.my_taobao.custom.MyView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white" />
-            </com.example.my_taobao.adapters.MyView>
+            </com.example.my_taobao.custom.MyView>
 
             <me.relex.circleindicator.CircleIndicator3
                 android:id="@+id/indicator"

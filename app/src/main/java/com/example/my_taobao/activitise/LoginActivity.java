@@ -3,24 +3,22 @@ package com.example.my_taobao.activitise;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.my_taobao.MainActivity;
 import com.example.my_taobao.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -32,6 +30,8 @@ public class LoginActivity extends AppCompatActivity {
     private SpannableString spannableString;
     private ClickableSpan clickableSpan1, clickableSpan2, clickableSpan3;
     private Intent intent;
+    private CheckBox sellect;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         text = findViewById(R.id.account_text);
         cancelBUtton = findViewById(R.id.cancel);
         terms = findViewById(R.id.login_text);
-        agree = findViewById(R.id.agree_terms);
-
+        sellect = findViewById(R.id.agree_terms);
         loginButton.setEnabled(false);
         String text1 = terms.getText().toString();
         spannableString = new SpannableString(text1);
@@ -114,9 +113,13 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                if (sellect.isChecked()) {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    Toast.makeText(LoginActivity.this, "请先勾选服务条款", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

@@ -1,7 +1,9 @@
 package com.example.my_taobao.fragments;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,9 +14,10 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.widget.NestedScrollView;
 
 import com.example.my_taobao.base.SimpleActivity;
-import com.example.my_taobao.Class.Commodity;
+import com.example.my_taobao.other.Commodity;
 import com.example.my_taobao.custom.CartManager;
 import com.example.my_taobao.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.youth.banner.Banner;
 import com.youth.banner.adapter.BannerImageAdapter;
 import com.youth.banner.holder.BannerImageHolder;
@@ -41,11 +44,15 @@ public class ProductDetailsActivity extends SimpleActivity {
 
     private static CartManager cartManager;
 
-    private ImageView imageView1, imageView2;
+    private ImageView imageView1, imageView2, collect;
 
     private Toolbar toolbar;
 
     private NestedScrollView scrollView;
+
+    private boolean isCollected = false;
+
+    private FloatingActionButton backToTop;
 
     @Override
     protected int getLayoutId() {
@@ -66,6 +73,8 @@ public class ProductDetailsActivity extends SimpleActivity {
         imageView2 = findViewById(R.id.product_longImage_two);
         scrollView = findViewById(R.id.nestedScrollView);
         toolbar = findViewById(R.id.details_toolbar);
+        collect = findViewById(R.id.commodity_collect);
+        backToTop = findViewById(R.id.back_to_top_button);
 
         intent = getIntent();
 
@@ -129,10 +138,12 @@ public class ProductDetailsActivity extends SimpleActivity {
                 if (scrollY > 600) {
                     if (toolbar.getVisibility() != View.VISIBLE) {
                         toolbar.setVisibility(View.VISIBLE);
+                        backToTop.setVisibility(View.VISIBLE);
                     }
                 } else {
                     if (toolbar.getVisibility() != View.GONE) {
                         toolbar.setVisibility(View.GONE);
+                        backToTop.setVisibility(View.GONE);
                     }
                 }
             }
@@ -144,5 +155,25 @@ public class ProductDetailsActivity extends SimpleActivity {
                 finish();
             }
         });
+
+        collect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isCollected) {
+                    collect.setImageResource(R.drawable.collect_icon);
+                } else {
+                    collect.setImageResource(R.drawable.collect_ic_collected);
+                }
+                isCollected = !isCollected;
+            }
+        });
+
+        backToTop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                scrollView.smoothScrollTo(0, 0);
+            }
+        });
     }
+
 }
