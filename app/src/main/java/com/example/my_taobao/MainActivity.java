@@ -1,6 +1,5 @@
 package com.example.my_taobao;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -19,11 +18,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.my_taobao.Base.SimpleActivity;
-import com.example.my_taobao.Home.mvp.HomeFragment;
-import com.example.my_taobao.Message.MessageFragment;
-import com.example.my_taobao.Mine.MineFragment;
-import com.example.my_taobao.Shop.ShopFragment;
+import com.example.my_taobao.base.SimpleActivity;
+import com.example.my_taobao.home.mvp.HomeFragment;
+import com.example.my_taobao.message.MessageFragment;
+import com.example.my_taobao.mine.MineFragment;
+import com.example.my_taobao.shop.ShopFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
@@ -36,6 +35,7 @@ public class MainActivity extends SimpleActivity implements  NavigationBarView.O
     private final String TAG = "MainActivity";
 
     private boolean isExit = false;
+
 
     private HomeFragment homeFragment;
     private MessageFragment messageFragment;

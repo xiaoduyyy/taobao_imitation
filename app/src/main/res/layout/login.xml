@@ -90,9 +90,10 @@
 
 
     <TextView
+        android:id="@+id/login_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="已阅读并同意以下协议:《姚天博安卓之神协议》《风雨炫内卷协议》《柳真阳帅逼协议》《类似于请客协议》"
+        android:text="已阅读并同意以下协议:《淘宝平台服务协议》《隐私权政策》《支付宝注册相关协议》，未注册的手机号将自动完成账号注册"
         android:textColor="@color/black"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"

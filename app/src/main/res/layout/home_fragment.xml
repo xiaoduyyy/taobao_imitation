@@ -89,13 +89,12 @@
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorColor="@color/orange"
                 app:tabIndicatorHeight="1dp"
-                app:tabSelectedTextColor="@color/white"
-                app:tabTextColor="@color/white"
+                app:tabSelectedTextColor="@color/orange"
+                app:tabTextColor="@color/black"
                 app:tabIndicatorFullWidth="false"
                 app:tabRippleColor="@android:color/transparent"/>
-
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"

@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="消息"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="25sp" />
 
         <LinearLayout
@@ -39,7 +39,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="5dp"
                 android:text="搜索"
-                android:textColor="#80FFFFFF"
+                android:textColor="#e6d4d4"
                 android:textSize="15sp" />
 
             <androidx.cardview.widget.CardView
@@ -49,7 +49,7 @@
                 android:layout_marginLeft="107dp"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                app:cardBackgroundColor="#fb4b71"
+                app:cardBackgroundColor="#e6d4d4"
                 app:cardCornerRadius="5dp">
 
                 <ImageView
@@ -66,7 +66,7 @@
             android:layout_height="30dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
-            android:background="@drawable/add_icon_white" />
+            android:background="@drawable/add_icon_black" />
 
     </LinearLayout>
 
@@ -82,10 +82,25 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/message_top_recyclerview"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:layout_margin="5dp"
+                        android:layout_width="160dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/message_top_image"/>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/message_top_recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </HorizontalScrollView>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/massage_recyclerview_recent"

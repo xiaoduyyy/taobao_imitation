@@ -23,6 +23,7 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:background="@drawable/avatar_background"
                 android:src="@drawable/avatar_xyy" />
 
         </androidx.cardview.widget.CardView>
@@ -34,7 +35,7 @@
             android:layout_marginLeft="15dp"
             android:layout_marginTop="25dp"
             android:text="xiaoduyyy"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toEndOf="@id/user_mine_avatar"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,7 +46,7 @@
             android:layout_height="20dp"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/location_icon"
+            android:background="@drawable/location_black_icon"
             app:layout_constraintStart_toEndOf="@id/user_mine_avatar"
             app:layout_constraintTop_toBottomOf="@id/user_mine_name" />
 
@@ -56,7 +57,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:text="收货地址"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="13sp"
             app:layout_constraintStart_toEndOf="@id/user_location_image"
             app:layout_constraintTop_toBottomOf="@id/user_mine_name" />
@@ -77,7 +78,7 @@
             android:layout_height="20dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/shop_mine_icon"
+            android:background="@drawable/shop_light_icon"
             app:layout_constraintStart_toEndOf="@id/wire_view"
             app:layout_constraintTop_toBottomOf="@id/user_mine_name" />
 
@@ -88,7 +89,7 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="5dp"
             android:text="关注店铺"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="13sp"
             app:layout_constraintStart_toEndOf="@id/user_mine_shop_image"
             app:layout_constraintTop_toBottomOf="@id/user_mine_name" />
@@ -99,7 +100,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/setting_icon"
+            android:background="@drawable/setting_icon_black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,7 +110,7 @@
             android:layout_marginTop="1dp"
             android:layout_marginRight="12dp"
             android:text="设置"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/setting_icon" />
@@ -120,7 +121,7 @@
             android:layout_height="25dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/custom_service_icon"
+            android:background="@drawable/custom_service_icon_black"
             app:layout_constraintEnd_toStartOf="@+id/setting_icon"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -130,7 +131,7 @@
             android:layout_marginTop="1dp"
             android:layout_marginRight="12dp"
             android:text="官方客服"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="10sp"
             app:layout_constraintEnd_toStartOf="@+id/setting_icon"
             app:layout_constraintTop_toBottomOf="@+id/imageView2" />
@@ -192,7 +193,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:text="猜你喜欢"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/user_others_cardView" />

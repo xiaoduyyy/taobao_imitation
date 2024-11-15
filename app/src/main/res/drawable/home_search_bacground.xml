@@ -3,7 +3,7 @@
     <solid android:color="#FFFFFF" />
     <!-- 设置边框 -->
     <stroke
-        android:width="0dp"
+        android:width="1dp"
         android:color="@color/orange" />
     <!-- 设置圆角，可选 -->
     <corners android:radius="10dp" />

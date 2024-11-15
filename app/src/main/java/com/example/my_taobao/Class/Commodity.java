@@ -1,6 +1,5 @@
 package com.example.my_taobao.Class;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Commodity {
@@ -21,30 +20,44 @@ public class Commodity {
 
     private int quantity;
 
-    public Commodity(int commodityImage, String commodityText, String commodityDecrase, String commodityPrice, String commoditySell, List<Integer> images, int quantity) {
+    private int longImage1;
+
+    private int longImage2;
+
+
+    public Commodity(int commodityImage, String commodityText, String commodityDecrase, String commodityPrice, String commoditySell, List<Integer> images, int longImage1, int longImage2) {
         this.commodityImage = commodityImage;
         this.commodityText = commodityText;
         this.commodityDecrase = commodityDecrase;
+        this.isSelected = false;
         this.commodityPrice = commodityPrice;
         this.commoditySell = commoditySell;
         this.images = images;
-        this.quantity = quantity;
-        this.isSelected = false;
+        this.quantity = 1;
+        this.longImage1 = longImage1;
+        this.longImage2 = longImage2;
+    }
+
+    public int getLongImage1() {
+        return longImage1;
+    }
+
+    public void setLongImage1(int longImage1) {
+        this.longImage1 = longImage1;
+    }
+
+    public int getLongImage2() {
+        return longImage2;
+    }
+
+    public void setLongImage2(int longImage2) {
+        this.longImage2 = longImage2;
     }
 
     public Commodity() {
     }
 
-    public Commodity(int commodityImage, String commodityText, String commodityDecrase, String commodityPrice, String commoditySell, List<Integer> images) {
-        this.commodityImage = commodityImage;
-        this.commodityText = commodityText;
-        this.commodityDecrase = commodityDecrase;
-        this.commodityPrice = commodityPrice;
-        this.commoditySell = commoditySell;
-        this.images = images;
-        this.quantity = 1;
-        this.isSelected = false;
-    }
+
 
     public boolean isSelected() {
         return isSelected;
@@ -53,6 +66,8 @@ public class Commodity {
     public void setSelected(boolean selected) {
         isSelected = selected;
     }
+
+
 
 
 
@@ -112,16 +127,5 @@ public class Commodity {
         this.commodityText = commodityText;
     }
 
-    @Override
-    public String toString() {
-        return "Commodity{" +
-                "commodityImage=" + commodityImage +
-                ", commodityText='" + commodityText + '\'' +
-                ", commodityDecrase='" + commodityDecrase + '\'' +
-                ", commodityPrice='" + commodityPrice + '\'' +
-                ", commoditySell='" + commoditySell + '\'' +
-                ", images=" + images +
-                ", quantity=" + quantity +
-                '}';
-    }
+
 }

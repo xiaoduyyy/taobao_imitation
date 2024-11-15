@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.example.my_taobao.Adapters.MyView
+            <com.example.my_taobao.adapters.MyView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white" />
-            </com.example.my_taobao.Adapters.MyView>
+            </com.example.my_taobao.adapters.MyView>
 
             <me.relex.circleindicator.CircleIndicator3
                 android:id="@+id/indicator"
@@ -36,11 +36,16 @@
                 android:background="@color/white"
                 app:ci_drawable="@color/orange"
                 app:ci_drawable_unselected="@color/grey"/>
-            <com.example.my_taobao.Custom.MyRecyclerView
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/home_top_image"/>
+            <com.example.my_taobao.custom.MyRecyclerView
                 android:id="@+id/commodity_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#f0f0f0" />
+                android:background="@drawable/home_two_color" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 

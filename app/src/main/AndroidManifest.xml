@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +15,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar"
         tools:targetApi="31">
         <activity
-            android:name=".Activitise.CoverActivity"
+            android:name=".activitise.CoverActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,13 +23,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Fragments.ProductDetailsActivity" />
-        <activity android:name=".Activitise.RegisterActivity" />
+        <activity android:name=".fragments.ProductDetailsActivity" />
+        <activity android:name=".activitise.RegisterActivity" />
         <activity android:name=".MainActivity"/>
-        <activity android:name=".Activitise.LoginActivity"/>
-        <receiver
-            android:name=".Shop.ShopFragment$CartUpdateReceiver"
-            android:exported="false" />
+        <activity android:name=".activitise.LoginActivity"/>
+        <activity android:name=".activitise.WebViewActivity"/>
+
 
     </application>
 
