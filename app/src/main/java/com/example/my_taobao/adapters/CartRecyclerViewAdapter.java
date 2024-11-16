@@ -69,12 +69,14 @@ public class CartRecyclerViewAdapter extends RecyclerView.Adapter<CartRecyclerVi
                 } else if (v.getId() == R.id.sellected_quantity) {
                     holder.incraseAndDecraseLayout.setVisibility(View.VISIBLE);
                 } else if (v.getId() == R.id.cart_incrase) {
+                    onItemClickListener.onItemClick(currentPosition, v.getId(), holder);
                     commodity.setQuantity(commodity.getQuantity() + 1);
                     holder.quantity.setText(String.valueOf(commodity.getQuantity()));
                     onItemClickListener.onItemClick(currentPosition, v.getId(), holder);
                     holder.quamtityCommodity.setText(String.valueOf(commodity.getQuantity()));
                     notifyItemChanged(currentPosition);
                 } else if (v.getId() == R.id.cart_decrase) {
+                    onItemClickListener.onItemClick(currentPosition, v.getId(), holder);
                     if (commodity.getQuantity() > 1) {
                         commodity.setQuantity(commodity.getQuantity() - 1);
                         holder.quantity.setText(String.valueOf(commodity.getQuantity()));

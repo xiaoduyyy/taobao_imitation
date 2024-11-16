@@ -173,6 +173,8 @@ public class ShopFragment extends BaseFragment<ShopPresenter> {
                     intent.putExtra("longimage1", commodity.getLongImage1());
                     intent.putExtra("longimage2", commodity.getLongImage2());
                     startActivity(intent);
+                } else if (viewId == R.id.cart_incrase || viewId == R.id.cart_decrase) {
+                    updateTotalPrice();
                 }
             }
         });
