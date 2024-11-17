@@ -95,13 +95,13 @@ public class ShopFragment extends BaseFragment<ShopPresenter> {
     private void showPurchaseDialog() {
 
         new android.app.AlertDialog.Builder(getContext())
-                .setTitle("确认购买")  // 设置标题
-                .setMessage("你确认要购买选中的商品吗？")  // 设置提示消息
+                .setTitle("确认购买")
+                .setMessage("你确认要购买选中的商品吗？")
                 .setPositiveButton("确认", (dialog, which) -> {
                     List<Commodity> toRemove = new ArrayList<>();
                     for (Commodity commodity : commodities) {
                         if (commodity.isSelected()) {
-                            toRemove.add(commodity);  // 将选中的商品加入待删除列表
+                            toRemove.add(commodity);
                         }
                     }
                     mPresenter.removeSelectedCommodities(toRemove);
@@ -120,7 +120,6 @@ public class ShopFragment extends BaseFragment<ShopPresenter> {
         for (Commodity commodity : commodities) {
             commodity.setSelected(isSelected);
         }
-        // 通知适配器更新界面
         recyclerView.getAdapter().notifyDataSetChanged();
     }
 
